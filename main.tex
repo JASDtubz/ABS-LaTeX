@@ -17,59 +17,172 @@
 
 \begin{abstract}
 The airline booking system allows customers to efficiently manage and check flights and their flight tickets and account data. 
+The Airline Management System enables efficient handling of passenger, flight, and booking data while ensuring smooth operational throughput even during periods of high demand and numerous concurrent transactions. In addition to managing core functionalities such as flight scheduling, ticketing, and payment processing, the system also supports report generation to aid in various airline operations and decision-making processes. The system integrates a variety of automated modules to streamline workflows across departments, including reservations, customer service, and flight operations. To illustrate its functionality and design, we developed multiple visual models including context flow diagrams, data flow diagrams(Levels 1 and 2), class diagrams, entity-relationship diagrams, and use case diagrams. These models will provide a comprehensive overview of the system's architecture and behavior.
 \end{abstract}
 
 \section{Introduction}
 
-Your introduction goes here! Simply start writing your document and use the Recompile button to view the updated PDF preview. Examples of commonly used commands and features are listed below, to help you get started.
-
-Once you are familiar with the editor, you can find various project settings in the Overleaf menu, accessed via the button in the very top left of the editor. To view tutorials, user guides, and further documentation, please visit \href{https://www.overleaf.com/learn}{help library}, or go to our plans page to \href{https://www.overleaf.com/user/subscription/plans}{choose your plan}.
+Add Text
 
 \section{Context Flow Diagram}
 
-\subsection{How to create Sections and Subsections}
+\subsection{Definitions}
 
-Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you have chosen. If you are using the Visual Editor, you can also create new section and subsections via the buttons in the editor toolbar.
+\begin{itemize}
+\item Employee:
+    \begin{itemize}
+    \item Those who work for the Airline.
+    \end{itemize}
+\item Administration:
+    \begin{itemize}
+    \item Those who run the Airline Management System.
+    \end{itemize}
+\item Customer:
+    \begin{itemize}
+    \item The User/Person who will be buying tickets/flights.
+    \end{itemize}
+\item Aircraft:
+    \begin{itemize}
+    \item The Plane used to transport different flights/Passengers.
+    \end{itemize}
+\end{itemize}
 
-\section{Data Flow Diagram}
+\subsection{Symbols}
+\begin{itemize}
+\item Squares:
+    \begin{itemize}
+        \item The different squares represent external entities in the context flow diagram.
+    \end{itemize}
+\end{itemize}
 
-\subsection{How to create Sections and Subsections}
+\begin{itemize}
+\item Arrows:
+    \begin{itemize}
+        \item Represent different processes relating entities together and describe what they may do while interacting.
+    \end{itemize}
+\end{itemize}
 
-Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you have chosen. If you are using the Visual Editor, you can also create new section and subsections via the buttons in the editor toolbar.
+\begin{itemize}
+\item Circle:
+    \begin{itemize}
+        \item Represents the Central Entity that all the other external entities interact with.
+    \end{itemize}
+\end{itemize}
 
 \section{Entity Relationship Diagram}
+\subsection{Diagram Symbols}
+\begin{itemize}
+\item Key Descriptions:
+    \begin{itemize}
+    \item Primary Key
+    \begin{itemize}
+        \item Uniquely Identifies each record in a table.
+    \end{itemize}
+    \item Foriegn Key
+    \begin{itemize}
+        \item Establishes a relationship between two tables
+    \end{itemize}
+    \item One to One
+    \begin{itemize}
+        \item Each record in entity A is related to exactly one record in Entity B and vice versa
+    \end{itemize}
+    \item One to Many
+    \begin{itemize}
+        \item Each record in entity A can relate to many records in Entity B, but each record in Entity B is related to only one record in Entity A
+    \end{itemize}
+    \item Many to Many
+    \begin{itemize}
+        \item Records in Entity A can relate to many records in Entity B, and vice versa
+    \end{itemize}
 
-\subsection{How to create Sections and Subsections}
-
-Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you have chosen. If you are using the Visual Editor, you can also create new section and subsections via the buttons in the editor toolbar.
-
-\subsection{How to include Figures}
-
-First, you have to upload the image file from your computer using the upload link in the file-tree menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
-
-Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by. You can find out more about adding images to your documents in this help article on \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{including images on Overleaf}.
-
-\begin{figure}
+    \end{itemize}
+\begin{table}
 \centering
-\includegraphics[width=0.25\linewidth]{frog.jpg}
-\caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
-\end{figure}
+\begin{tabular}{l|r}
+Symbol/Keys & Description \\\hline
+PK & PrimaryKey \\
+FK & ForiegnKey\\
+---\textbar{}------\textbar{}--- & One to One\\
+---\textbar{}------\textless{}--- & One to Many\\
+-\textgreater{}------\textless{}- & Many to Many
+\end{tabular}
+\caption{\label{tab:widgets}Symbols/Keys and Description}
+\end{table}
+\subsection{Definitions}
+\begin{itemize}
+\item Passenger:
+    \begin{itemize}
+    \item PK    PassengerID
+    \item       FirstName
+    \item       LastName
+    \item       Email
+    \item       Phone
+    \item       PassportNumber
+    \end{itemize}
+\item Ticket:
+    \begin{itemize}
+    \item PK    TicketID
+    \item       SeatNumber
+    \item       Class
+    \item       Price
+    \item FK    BookingID
+    \item FK    FlightID
+    \end{itemize}
+\item Booking:
+    \begin{itemize}
+    \item PK    BookingID
+    \item       BookingDate
+    \item       TotalAmount
+    \item       PaymentStatus
+    \item FK    PassengerID
+    \end{itemize}
+\item Payment:
+    \begin{itemize}
+    \item PK    PaymentID
+    \item       Amount
+    \item       Method
+    \item FK    BookingID
+    \end{itemize}
+\item Flight:
+    \begin{itemize}
+    \item PK    FlightNumber
+    \item       DepartureTime
+    \item       ArrivalTime
+    \item       Status
+    \item FK    AircraftID
+    \item FK    DepartureAirport
+    \end{itemize}
+\item Aircraft:
+    \begin{itemize}
+    \item PK    AircraftID
+    \item       Model
+    \item       Manufacturer
+    \item       Capacity
+    \end{itemize}
+\item Airport:
+    \begin{itemize}
+    \item PK    AirportID
+    \item       Name
+    \item       City
+    \item       Country
+    \item       Code
+    \end{itemize}
+\item Employee:
+    \begin{itemize}
+    \item PK    EmployeeID
+    \item       Name
+    \item       Position
+    \item       Email
+    \item FK    AssignedFlightID
+    \end{itemize}
+\end{itemize}
 
+\section{Data Flow Diagram}
 \subsection{Data Flow Diagram}
 
 Use the table and tabular environments for basic tables --- see Table~\ref{tab:widgets}, for example. For more information, see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
 
-\begin{table}
-\centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
-\end{tabular}
-\caption{\label{tab:widgets}An example table.}
-\end{table}
-
-\subsection{ER Diagram}
+\subsection{subsection TEXT}
 
 Comments can be added to your project by highlighting some text and clicking ``Add comment'' in the top right of the editor pane. To view existing comments, click on the Review menu in the toolbar above. To respond to a comment, click on the Reply button in the lower right corner of the comment. You can close the Review pane by clicking its name on the toolbar when you are done reviewing for the time being.
 
