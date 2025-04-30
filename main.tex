@@ -16,7 +16,7 @@
 \maketitle
 
 \begin{abstract}
-The Airline Management System enables efficient handling of passenger, flight, and booking data while ensuring smooth operational throughput even during periods of high demand and numerous concurrent transactions. In addition to managing core functionalities such as flight scheduling, ticketing, and payment processing, the system also supports report generation to aid in various airline operations and decision-making processes. The system integrates a variety of automated modules to streamline workflows across departments, including reservations, customer service, and flight operations. To illustrate its functionality and design, we developed multiple visual models including context flow diagrams, data flow diagrams(Levels 1 and 2), class diagrams, entity-relationship diagrams, and use case diagrams. These models will provide a comprehensive overview of the system's architecture and behavior.
+The Airline Management System enables efficient handling of passenger, flight and booking data while ensuring smooth operational throughput even during periods of high demand and numerous concurrent transactions. In addition to managing core functionalities such as flight scheduling, ticketing, and payment processing, the system also supports report generation to aid in various airline operations and decision-making processes. The system integrates a variety of automated modules to streamline workflows across departments, including reservations, customer service, and flight operations. To illustrate its functionality and design, we developed multiple visual models including context flow diagrams, data flow diagrams(Levels 1 and 2), class diagrams, entity-relationship diagrams, and use case diagrams. These models will provide a comprehensive overview of the system's architecture and behavior.
 \end{abstract}
 
 \section{Introduction}
@@ -28,13 +28,12 @@ Add Text
 \subsection{Definitions}
 
 \begin{itemize}
-\item Employee:
-    \begin{itemize}
-    \item Those who work for the Airline.
+\item Employee: \begin{itemize}
+    \item Those who work for the airline.
     \end{itemize}
 \item Administration:
     \begin{itemize}
-    \item Those who run the Airline Management System.
+    \item Those who manage the Airline Management System.
     \end{itemize}
 \item Customer:
     \begin{itemize}
@@ -42,22 +41,20 @@ Add Text
     \end{itemize}
 \item Aircraft:
     \begin{itemize}
-    \item The Plane used to transport different flights/Passengers.
+    \item The plane used to transport different flights/passengers.
     \end{itemize}
 \end{itemize}
 
 \subsection{Symbols}
 \begin{itemize}
-\item Squares:
-    \begin{itemize}
+\item Squares: \begin{itemize}
         \item The different squares represent external entities in the context flow diagram.
     \end{itemize}
 \end{itemize}
 
 \begin{itemize}
-\item Arrows:
-    \begin{itemize}
-        \item Represent different processes relating entities together and describe what they may do while interacting.
+\item Arrows: \begin{itemize}
+        \item Represent different processes that connect entities and describe what they may do while interacting.
     \end{itemize}
 \end{itemize}
 
@@ -110,8 +107,7 @@ FK & ForiegnKey\\
 \end{table}
 \subsection{Definitions}
 \begin{itemize}
-\item Passenger:
-    \begin{itemize}
+\item Passenger: \begin{itemize}
     \item PK    PassengerID
     \item       FirstName
     \item       LastName
@@ -182,8 +178,7 @@ FK & ForiegnKey\\
 \subsection{Definitions}
 
 \begin{itemize}
-\item Subsystem:
-    \begin{itemize}
+\item Subsystem: \begin{itemize}
     \item Airline Flight Management
     \item User Management
     \item Booking Subsystem
@@ -194,7 +189,7 @@ FK & ForiegnKey\\
     \item Admin
     \item Customer
     \end{itemize}
-\item Data Storage:
+\item Data storage:
     \begin{itemize}
     \item User Database
     \item Flight Database
@@ -206,7 +201,7 @@ FK & ForiegnKey\\
 
 This Data Flow Diagram correctly follows standard conventions, ensuring that all data movement is clearly mapped, and all processes and storage points are logically connected. The interactions between the Customer/Admin and the internal subsystems are carefully defined to reflect real-world airline operations, providing a clear visualization of the system's functional structure.
 
-Within this diagram, we can see a well-structured breakdown of the airline booking system into four core subsystems, two external entities, and three primary data stores, all interconnected through clearly labeled data flows. These components together enable seamless airline operations including user management, flight handling, booking, and payment processing.
+Within this diagram, we can see a well-structured breakdown of the airline booking system into four core subsystems, two external entities, and three primary data stores, all interconnected through clearly labeled data flows. Together, these components enable seamless airline operations including user management, flight handling, booking, and payment processing.
 
 \section{Level 2 Data Flow Diagram}
 
