@@ -16,7 +16,6 @@
 \maketitle
 
 \begin{abstract}
-The airline booking system allows customers to efficiently manage and check flights and their flight tickets and account data. 
 The Airline Management System enables efficient handling of passenger, flight, and booking data while ensuring smooth operational throughput even during periods of high demand and numerous concurrent transactions. In addition to managing core functionalities such as flight scheduling, ticketing, and payment processing, the system also supports report generation to aid in various airline operations and decision-making processes. The system integrates a variety of automated modules to streamline workflows across departments, including reservations, customer service, and flight operations. To illustrate its functionality and design, we developed multiple visual models including context flow diagrams, data flow diagrams(Levels 1 and 2), class diagrams, entity-relationship diagrams, and use case diagrams. These models will provide a comprehensive overview of the system's architecture and behavior.
 \end{abstract}
 
@@ -94,8 +93,9 @@ Add Text
     \begin{itemize}
         \item Records in Entity A can relate to many records in Entity B, and vice versa
     \end{itemize}
-
     \end{itemize}
+\end{itemize}
+
 \begin{table}
 \centering
 \begin{tabular}{l|r}
@@ -177,62 +177,52 @@ FK & ForiegnKey\\
     \end{itemize}
 \end{itemize}
 
-\section{Data Flow Diagram}
-\subsection{Data Flow Diagram}
+\section{Level 1 Data Flow Diagram}
 
-Use the table and tabular environments for basic tables --- see Table~\ref{tab:widgets}, for example. For more information, see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
 
-\subsection{subsection TEXT}
+\subsection{DFD Symbols}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\linewidth]{DFD-Basic-Symbols.jpg}
+    
+\end{figure}
 
-Comments can be added to your project by highlighting some text and clicking ``Add comment'' in the top right of the editor pane. To view existing comments, click on the Review menu in the toolbar above. To respond to a comment, click on the Reply button in the lower right corner of the comment. You can close the Review pane by clicking its name on the toolbar when you are done reviewing for the time being.
+\subsection{Definitions}
 
-Track changes are available in all of our \href{https://www.overleaf.com/user/subscription/plans}{premium plans} and can be toggled on or off using the option at the top of the Review pane. Track changes allow you to keep track of every change made to the document along with the person making the change. 
-
-\subsection{How to add Lists}
-
-You can make lists with automatic numbering \dots
-
-\begin{enumerate}
-\item Like this,
-\item and like this.
-\end{enumerate}
-\dots or bullet points \dots
 \begin{itemize}
-\item Like this,
-\item and like this.
+\item Subsystem:
+    \begin{itemize}
+    \item Airline Flight Management
+    \item User Management
+    \item Booking Subsystem
+    \item Payment Processing
+    \end{itemize}
+\item Entity:
+    \begin{itemize}
+    \item Admin
+    \item Customer
+    \end{itemize}
+\item Data Storage:
+    \begin{itemize}
+    \item User Database
+    \item Flight Database
+    \item Payment Records
+    \end{itemize}
 \end{itemize}
 
-\subsection{How to write Mathematics}
+\subsection{Level 1 DFD Summary}
 
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i\]
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+This Data Flow Diagram correctly follows standard conventions, ensuring that all data movement is clearly mapped, and all processes and storage points are logically connected. The interactions between the Customer/Admin and the internal subsystems are carefully defined to reflect real-world airline operations, providing a clear visualization of the system's functional structure.
 
+Within this diagram, we can see a well-structured breakdown of the airline booking system into four core subsystems, two external entities, and three primary data stores, all interconnected through clearly labeled data flows. These components together enable seamless airline operations including user management, flight handling, booking, and payment processing.
 
-\subsection{How to change the margins and paper size}
+\section{Level 2 Data Flow Diagram}
 
-Usually the template you're using will have the page margins and paper size set correctly for that use-case. For example, if you're using a journal article template provided by the journal publisher, that template will be formatted according to their requirements. In these cases, it's best not to alter the margins directly.
+\subsection{Definitions}
 
-If however you're using a more general template, such as this one, and would like to alter the margins, a common way to do so is via the geometry package. You can find the geometry package loaded in the preamble at the top of this example file, and if you'd like to learn more about how to adjust the settings, please visit this help article on \href{https://www.overleaf.com/learn/latex/page_size_and_margins}{page size and margins}.
+\section{Use Case Diagram}
 
-\subsection{How to change the document language and spell check settings}
-
-Overleaf supports many different languages, including multiple different languages within one document. 
-
-To configure the document language, simply edit the option provided to the babel package in the preamble at the top of this example project. To learn more about the different options, please visit this help article on \href{https://www.overleaf.com/learn/latex/International_language_support}{international language support}.
-
-To change the spell check language, simply open the Overleaf menu at the top left of the editor window, scroll down to the spell check setting, and adjust accordingly.
-
-\subsection{How to add Citations and a References List}
-
-You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this: \cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
-
-If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded account}, you can also import your Mendeley or Zotero library directly as a \verb|.bib| file, via the upload menu in the file-tree.
-
-\subsection{Good luck!}
-
-We hope you find Overleaf useful, and do take a look at our \href{https://www.overleaf.com/learn}{help library} for more tutorials and user guides! Please also let us know if you have any feedback using the Contact Us link at the bottom of the Overleaf menu --- or use the contact form at \url{https://www.overleaf.com/contact}.
+\subsection{Definitions}
 
 \bibliographystyle{alpha}
 \bibliography{sample}
